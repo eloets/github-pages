@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Explora el Universo - Fanáticos del Espacio</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+<style>
+  /* Estilos generales */
+  body {
+    margin: 0; padding: 0; background: #000011; color: #eee;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+  }
+  header {
+    background: #001122cc;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 0 30px #00ffffaa;
+  }
+  header h1 {
+    font-size: 3.5em;
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffffcc;
+    margin: 0;
+  }
+  header p {
+    font-size: 1.3em;
+    color: #99ffffcc;
+    margin-top: 8px;
+  }
+  nav {
+    background: #001a33dd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 10px;
+    box-shadow: inset 0 -3px 10px #00cccc99;
+  }
+  nav button {
+    background: #002244bb;
+    border: 2px solid #00ccffbb;
+    color: #00eeff;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 140px;
+  }
+  nav button:hover, nav button.active {
+    background: #00ccffcc;
+    color: #002244;
+    border-color: #00ffff;
+    box-shadow: 0 0 15px #00ffffaa;
+  }
+  main {
+    max-width: 1100px;
+    margin: 30px auto 60px;
+    padding: 0 20px;
+  }
+  section {
+    display: none;
+    background: rgba(0, 30, 50, 0.85);
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 0 30px #0099ffbb;
+    color: #ccf8ff;
+    line-height: 1.55;
+    font-size: 1.1em;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  section.active {
+    display: block;
+  }
+  h2 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    color: #00e5ff;
+    text-shadow: 0 0 12px #00ffffbb;
+    border-bottom: 2px solid #00ccff88;
+    padding-bottom: 10px;
+  }
+  p {
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+  /* Scrollbar */
+  section::-webkit-scrollbar {
+    width: 10px;
+  }
+  section::-webkit-scrollbar-track {
+    background: #001a33;
+    border-radius: 8px;
+  }
+  section::-webkit-scrollbar-thumb {
+    background: #00ccffaa;
+    border-radius: 8px;
+  }
+  /* Timeline */
+  #timeline {
+    max-height: 80vh;
+  }
+  .timeline-entry {
+    background: #002244cc;
+    margin-bottom: 18px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #00ffff55;
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+  .timeline-entry:hover {
+    background: #00ccffcc;
+    color: #001a33;
+  }
+  .timeline-date {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 6px;
+  }
+  .timeline-detail {
+    font-size: 1em;
+  }
+  /* Responsive */
+  @media(max-width: 720px) {
+    nav {
+      flex-direction: column;
+      gap: 8px;
+    }
+    nav button {
+      min-width: auto;
+      width: 100%;
+    }
+    section {
+      padding: 20px 15px;
+      font-size: 1em;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Explora el Universo</h1>
+  <p>Esta página está creada para fanáticos del espacio, con todo lo fascinante que el cosmos nos ofrece. Descubre el misterio, la ciencia y las leyendas del universo.</p>
+</header>
+
+<nav>
+  <button data-target="introduccion" class="active">Introducción</button>
+  <button data-target="cuerpos">Cuerpos Celestes</button>
+  <button data-target="eventos">Eventos Cósmicos</button>
+  <button data-target="auroras">Auroras Cósmicas</button>
+  <button data-target="alien">Alienígenas y Conspiraciones</button>
+  <button data-target="estrellas">Estrellas y Nombres</button>
+  <button data-target="sol">¿Y si explota el Sol?</button>
+  <button data-target="timeline">Timeline Histórico</button>
+  <button data-target="misiones">Misiones Espaciales</button>
+  <button data-target="agujeros">Agujeros Negros</button>
+  <button data-target="planetasEnanos">Planetas Enanos</button>
+</nav>
+
+<main>
+  <section id="introduccion" class="active" tabindex="0" aria-label="Introducción">
+    <h2>Bienvenido al Cosmos</h2>
+    <p>
+      El espacio es un vasto océano de misterio y maravilla. Esta página está diseñada para los apasionados por el cosmos, los que sueñan con estrellas, planetas, galaxias y la posibilidad de vida más allá de nuestro planeta. Aquí encontrarás información detallada, historias, teorías y hechos científicos sobre distintos aspectos del universo.
+    </p>
+    <p>
+      Desde los cuerpos celestes que habitan el espacio, hasta eventos astronómicos que nos dejan boquiabiertos, pasando por las misteriosas auroras cósmicas y las teorías sobre alienígenas, esta experiencia te llevará a un viaje profundo y enriquecedor.
+    </p>
+    <!-- Duplicado -->
+    <p>
+      Si deseas explorar en profundidad, también podrás acceder a recursos, libros recomendados, documentales y enlaces para ampliar tu conocimiento sobre el cosmos y sus secretos más profundos. La astronomía amateur y la investigación profesional se unen en esta plataforma para ofrecerte una visión completa del universo en constante expansión.
+    </p>
+    <p>
+      Así que prepárate para adentrarte en un viaje sin fin, donde cada estrella, cada planeta y cada galaxia tiene una historia que contar. La exploración del universo es una aventura sin fronteras, y tú eres parte de ella.
+    </p>
+  </section>
+
+  <section id="cuerpos" tabindex="0" aria-label="Cuerpos Celestes">
+    <h2>Cuerpos Celestes: El Universo en Forma</h2>
+    <p>
+      El cosmos está compuesto por innumerables tipos de cuerpos celestes que varían en tamaño, composición y función. Entre los más conocidos están las estrellas, que son enormes bolas de plasma donde ocurren reacciones nucleares; los planetas, cuerpos que orbitan estrellas y pueden ser rocosos o gaseosos; y las lunas, satélites naturales de los planetas.
+    </p>
+    <p>
+      Más allá de estos, existen los asteroides y cometas, fragmentos rocosos y helados que viajan por el espacio y que, al acercarse al Sol, pueden producir espectáculos luminosos. Los agujeros negros, regiones donde la gravedad es tan intensa que nada escapa, representan algunos de los objetos más extremos y enigmáticos.
+    </p>
+    <p>
+      También encontramos enanas marrones, cuerpos que son el puente entre una estrella y un planeta, pues no tienen suficiente masa para iniciar la fusión nuclear. Los púlsares y cuásares son estrellas de neutrones y núcleos galácticos activos que emiten radiación de manera intensa.
+    </p>
+    <p>
+      En nuestra galaxia, la Vía Láctea, existen miles de millones de estos cuerpos, formando un sistema dinámico y en constante cambio. Entender sus características nos ayuda a comprender el origen y evolución del universo.
+    </p>
+    <!-- Duplicado -->
+    <p>
+      La diversidad de estos cuerpos no solo enriquece la estructura del cosmos, sino que también ofrece pistas sobre los procesos físicos y químicos que dieron forma a todo lo que conocemos. Cada uno de estos objetos puede contener secretos de nuestro pasado cósmico, como restos de la formación del sistema solar o señales de fenómenos astrofísicos extremos.
+    </p>
+    <p>
+      La observación y estudio de estos cuerpos continúa siendo uno de los mayores desafíos y maravillas de la astronomía moderna, ayudándonos a entender la historia del universo y nuestro lugar en él.
+    </p>
+  </section>
+
+  <section id="eventos" tabindex="0" aria-label="Eventos Cósmicos">
+    <h2>Eventos Cósmicos: La Danza del Universo</h2>
+    <p>
+      El universo está en constante movimiento y cambio, y estos eventos cósmicos son pruebas vivas de ello. Las supernovas, explosiones de estrellas masivas, liberan una cantidad inmensa de energía y crean elementos pesados como el oro y el uranio. Las lluvias de meteoros, visibles desde la Tierra, son resultado del paso de la Tierra por restos de cometas.
+    </p>
+    <p>
+      Los eclipses solares y lunares, fenómenos donde un cuerpo celeste tapa la luz de otro, han fascinado a la humanidad desde tiempos antiguos y son objetos de estudio y predicción muy precisos hoy día. Las alineaciones planetarias, aunque no afectan gravitacionalmente la Tierra de forma significativa, son eventos astronómicos bellísimos.
+    </p>
+    <p>
+      Entre los eventos más energéticos están los estallidos de rayos gamma, que pueden liberar más energía en segundos que nuestro Sol en toda su vida. También están las colisiones de galaxias, procesos que duran millones de años y forman nuevas estructuras y estrellas.
+    </p>
+    <p>
+      La exploración y observación de estos fenómenos no solo nos permiten entender la física en condiciones extremas, sino que también nos conectan con el cosmos en una escala que trasciende la imaginación humana. Cada evento es una historia en sí misma, parte del gran ballet cósmico que continúa en silencio y esplendor.
+    </p>
+    <!-- Duplicado -->
+    <p>
+      La tecnología moderna y las misiones espaciales nos brindan la oportunidad de estudiar estos fenómenos en tiempo real, capturando detalles que antes eran inaccesibles. Desde telescopios en la Tierra hasta satélites en órbita, cada instrumento ayuda a desentrañar los secretos del universo en movimiento.
+    </p>
+    <p>
+      La comprensión de estos eventos también tiene implicaciones en nuestra vida cotidiana, ayudándonos a predecir fenómenos que podrían afectar la Tierra, como lluvias de meteoros o eventos solares extremos, y prepararnos mejor para el futuro.
+    </p>
+  </section>
+
+  <section id="auroras" tabindex="0" aria-label="Auroras Cósmicas">
+    <h2>Auroras Cósmicas: Luz en la Oscuridad del Espacio</h2>
+    <p>
+      Todos conocemos las auroras boreales y australes, esos maravillosos espectáculos de luz en los polos de la Tierra causados por partículas solares chocando con la atmósfera. Pero, ¿sabías que existen auroras en otros planetas y cuerpos del sistema solar? Júpiter, Saturno, y hasta Marte tienen sus propias auroras, producidas por sus campos magnéticos y la interacción con el viento solar.
+    </p>
+    <p>
+      Estas auroras cósmicas pueden ser mucho más poderosas que las terrestres, iluminando vastas regiones del espacio. Por ejemplo, las auroras de Júpiter pueden ser visibles en rayos X y radio, captadas por telescopios espaciales.
+    </p>
+    <p>
+      Estudiar estas auroras nos ayuda a comprender los campos magnéticos planetarios, la composición atmosférica y el comportamiento del viento solar en diferentes ambientes espaciales.
+    </p>
+    <p>
+      La interacción entre partículas cargadas, campos magnéticos y atmósferas planetarias crea espectáculos de luces que son ventanas a los procesos físicos en ambientes extremos. Estas luces no solo son hermosas, sino que contienen información valiosa sobre la magnetosfera y la atmósfera de cada cuerpo celeste.
+    </p>
+    <!-- Duplicado -->
+    <p>
+      Además, las auroras también pueden ser indicadores de actividad solar y cambios en el espacio cercano a estos planetas, sirviendo como un termómetro natural de las condiciones del espacio en diferentes regiones del sistema solar.
+    </p>
+    <p>
+      La observación de auroras en otros mundos también ayuda a entender mejor la protección que ofrecen los campos magnéticos contra la radiación y su papel en la habitabilidad de planetas y lunas.
+    </p>
+  </section>
+
+  <section id="alien" tabindex="0" aria-label="Alienígenas y Conspiraciones">
+    <h2>Alienígenas y Conspiraciones: Misterios en la Oscuridad</h2>
+    <p>
+      La fascinación humana por la vida extraterrestre es antigua y universal. Aunque aún no se ha confirmado la existencia de seres inteligentes fuera de la Tierra, la inmensidad del universo sugiere que podría haber vida en otros lugares. Muchos científicos buscan señales en planetas habitables, exoplanetas con condiciones similares a las de la Tierra, y lunas con océanos ocultos bajo su superficie.
+    </p>
+    <p>
+      Las teorías conspirativas abundan: desde supuestos contactos secretos con extraterrestres hasta la idea de que gobiernos esconden pruebas de ovnis. Documentos desclasificados y testimonios de pilotos han alimentado estas creencias. Sin embargo, la ciencia mantiene una postura escéptica y exige evidencia rigurosa.
+    </p>
+    <p>
+      Proyectos como SETI (Search for Extraterrestrial Intelligence) usan radiotelescopios para escuchar señales inteligentes, mientras que las sondas espaciales siguen explorando los confines del sistema solar en busca de pistas.
+    </p>
+    <p>
+      A pesar de lo que nos cuentan las historias y películas, el verdadero contacto con civilizaciones alienígenas sigue siendo una incógnita, y un tema apasionante para la humanidad.
+    </p>
+    <!-- Duplicado -->
+    <p>
+      La posibilidad de contacto con vida inteligente plantea preguntas profundas sobre nuestro lugar en el cosmos, la naturaleza de la conciencia y la evolución de las civilizaciones. La búsqueda continúa, y cada descubrimiento potencial nos acerca o nos aleja de responder estas grandes interrogantes.
+    </p>
+    <p>
+      La ciencia y la tecnología avanzan rápidamente, y con ellas, la esperanza de algún día encontrar señales o evidencia sólida que confirme que no estamos solos en el universo.
+    </p>
+  </section>
+
+  <section id="estrellas" tabindex="0" aria-label="Estrellas y Nombres">
+    <h2>Estrellas: Nombres y Misterios</h2>
+    <p>
+      Las estrellas han sido nombradas y catalogadas desde tiempos antiguos por distintas culturas. Muchas reciben nombres en árabe, griego o latín, que describen sus características o su posición en las constelaciones. Por ejemplo, Sirius, la estrella más brillante en el cielo nocturno, tiene un nombre derivado del griego que significa "ardiente".
+    </p>
+    <p>
+      Los astrónomos modernos usan sistemas de catalogación con números y letras para identificar miles de millones de estrellas, permitiendo un estudio detallado y ordenado.
+    </p>
+    <p>
+      El sistema solar es el resultado de la formación de una nube de gas y polvo que colapsó hace 4.6 mil millones de años, dando lugar al Sol y los cuerpos que orbitan a su alrededor. La gravedad, la rotación y la composición química moldearon planetas rocosos, gaseosos y objetos menores.
+    </p>
+    <p>
+      El primer humano conocido que quiso entender el cosmos y buscar más allá fue el filósofo griego Anaximandro, quien postuló que la Tierra flotaba en el espacio y que el universo era infinito, dando inicio a la astronomía.
+    </p>
+    <!-- Duplicado -->
+    <p>
+      La historia de las estrellas también está marcada por mitos, leyendas y descubrimientos científicos que han ido enriqueciendo nuestro conocimiento. Desde las observaciones con telescopios primitivos hasta los telescopios espaciales de alta tecnología, hemos aprendido que las estrellas no son solo puntos de luz, sino vastos laboratorios de procesos físicos y químicos.
+    </p>
+    <p>
+      La exploración de las estrellas y sus nombres nos conecta con civilizaciones antiguas y con la ciencia moderna, recordándonos que el universo es un lugar de infinito misterio, esperando ser descubierto por las futuras generaciones.
+    </p>
+  </section>
+
+  <section id="sol" tabindex="0" aria-label="¿Y si explota el Sol?">
+    <h2>¿Qué pasaría si explota el Sol?</h2>
+    <p>
+      La idea de que el Sol pueda "explotar" como una bomba es un concepto erróneo muy común. El Sol no es una estrella que explota violentamente, sino una estrella de tipo enana amarilla que seguirá quemando hidrógeno durante otros 5 mil millones de años.
+    </p>
+    <p>
+      Cuando el Sol agote su combustible nuclear, se expandirá convirtiéndose en una gigante roja, engullendo probablemente a Mercurio y Venus, y posiblemente acercándose a la Tierra, haciendo imposible la vida tal como la conocemos. Luego, expulsará sus capas exteriores formando una nebulosa planetaria, dejando un núcleo muy denso llamado enana blanca.
+    </p>
+    <p>
+      Este proceso no es una explosión catastrófica, sino una transformación gradual. Sin embargo, si ocurriera una explosión solar extrema de rayos gamma o una llamarada solar gigantesca, las telecomunicaciones y la vida en la Tierra podrían verse seriamente afectadas.
+    </p>
+    <p>
+      Estudiar el Sol y sus ciclos es vital para entender el clima espacial y proteger nuestra tecnología y vida.
+    </p>
+    <!-- Duplicado -->
+    <p>
+      La comprensión de la evolución solar también nos ayuda a entender fenómenos similares en otras estrellas y en diferentes etapas de su ciclo de vida. Además, los impactos de eventos solares extremos en la tecnología moderna subrayan la importancia de la investigación en ciencia espacial para prever y mitigar posibles efectos.
+    </p>
+    <p>
+      La vida en la Tierra está estrechamente vinculada a la actividad solar, por lo que estudiar y monitorear el Sol no solo es una cuestión de curiosidad, sino una necesidad para nuestra supervivencia tecnológica y biológica.
+    </p>
+  </section>
+
+  <section id="timeline" tabindex="0" aria-label="Timeline Histórico">
+    <h2>Timeline Histórico: Grandes Momentos del Espacio</h2>
+    <div id="timeline">
+      <div class="timeline-entry" tabindex="0" aria-expanded="false" aria-controls="detail1" role="button" aria-label="28 de junio de 1908: Evento de Tunguska">
+        <div class="timeline-date">28 de junio de 1908</div>
+        <div class="timeline-detail"><strong>Evento de Tunguska:</strong> Una enorme explosión causada por un meteoroide o cometa sobre Siberia, que arrasó con miles de kilómetros cuadrados de bosque.</div>
+      </div>
+      <div class="timeline-entry" tabindex="0" aria-expanded="false" aria-controls="detail2" role="button" aria-label="4 de octubre de 1957: Lanzamiento del Sputnik 1">
+        <div class="timeline-date">4 de octubre de 1957</div>
+        <div class="timeline-detail"><strong>Lanzamiento del Sputnik 1:</strong> Primer satélite artificial lanzado por la Unión Soviética, marcando el inicio de la era espacial.</div>
+      </div>
+      <div class="timeline-entry" tabindex="0" aria-expanded="false" aria-controls="detail3" role="button" aria-label="12 de abril de 1961: Yuri Gagarin al espacio">
+        <div class="timeline-date">12 de abril de 1961</div>
+        <div class="timeline-detail"><strong>Yuri Gagarin:</strong> Primer ser humano en orbitar la Tierra a bordo de la nave Vostok 1.</div>
+      </div>
+      <div class="timeline-entry" tabindex="0" aria-expanded="false" aria-controls="detail4" role="button" aria-label="20 de julio de 1969: Apolo 11">
+        <div class="timeline-date">20 de julio de 1969</div>
+        <div class="timeline-detail"><strong>Apolo 11:</strong> Neil Armstrong y Buzz Aldrin pisan la Luna por primera vez, hito histórico para la humanidad.</div>
+      </div>
+      <div class="timeline-entry" tabindex="0" aria-expanded="false" aria-controls="detail5" role="button" aria-label="4 de julio de 1997: Mars Pathfinder">
+        <div class="timeline-date">4 de julio de 1997</div>
+        <div class="timeline-detail"><strong>Mars Pathfinder:</strong> La sonda aterriza en Marte y envía datos que revolucionan nuestro conocimiento del planeta rojo.</div>
+      </div>
+      <div class="timeline-entry" tabindex="0" aria-expanded="false" aria-controls="detail6" role="button" aria-label="6 de agosto de 2012: Curiosity en Marte">
+        <div class="timeline-date">6 de agosto de 2012</div>
+        <div class="timeline-detail"><strong>Curiosity:</strong> Rover enviado por la NASA comienza su exploración detallada en Marte.</div>
+      </div>
+      <div class="timeline-entry" tabindex="0" aria-expanded="false" aria-controls="detail7" role="button" aria-label="11 de febrero de 2016: Ondas gravitacionales">
+        <div class="timeline-date">11 de febrero de 2016</div>
+        <div class="timeline-detail"><strong>Ondas gravitacionales:</strong> Confirmación de la existencia de ondas en el espacio-tiempo predichas por Einstein.</div>
+      </div>
+      <div class="timeline-entry" tabindex="0" aria-expanded="false" aria-controls="detail8" role="button" aria-label="18 de febrero de 2021: Perseverance en Marte">
+        <div class="timeline-date">18 de febrero de 2021</div>
+        <div class="timeline-detail"><strong>Perseverance:</strong> Rover aterriza en Marte para buscar signos de vida pasada y preparar futuras misiones tripuladas.</div>
+      </div>
+    </div>
+    <!-- Duplicado -->
+    <p>
+      Cada uno de estos eventos marca hitos en la historia de la exploración espacial, demostrando avances tecnológicos, descubrimientos científicos y la voluntad humana de conquistar lo desconocido. La historia continúa escribiéndose con nuevas misiones, exploraciones y descubrimientos que seguirán expandiendo nuestro entendimiento del cosmos.
+    </p>
+    <p>
+      La narrativa de los grandes momentos en el espacio nos inspira a seguir soñando, investigando y alcanzando nuevas fronteras en la búsqueda de respuestas a los misterios del universo.
+    </p>
+  </section>
+
+  <section id="misiones" tabindex="0" aria-label="Misiones Espaciales">
+    <h2>Misiones Espaciales: La Exploración Humana del Cosmos</h2>
+    <p>
+      Desde los primeros lanzamientos de satélites hasta las ambiciosas misiones a Marte y más allá, la exploración espacial ha avanzado a pasos agigantados. El Sputnik 1 marcó el inicio, seguido por misiones tripuladas como el programa Apolo que llevó al hombre a la Luna.
+    </p>
+    <p>
+      Posteriormente, sondas como Voyager 1 y 2 exploraron los confines del sistema solar, enviando imágenes y datos que han ampliado nuestro conocimiento. Actualmente, la Estación Espacial Internacional es un laboratorio orbital que permite experimentos en microgravedad.
+    </p>
+    <p>
+      Las misiones robóticas a Marte, como Curiosity y Perseverance, buscan pistas sobre la habitabilidad pasada y presente del planeta rojo. Futuras misiones planean regresar muestras lunares y explorar asteroides cercanos.
+    </p>
+    <p>
+      La cooperación internacional y el desarrollo tecnológico seguirán siendo claves para avanzar en esta frontera final.
+    </p>
+    <!-- Duplicado -->
+    <p>
+      La historia de las misiones espaciales refleja la capacidad humana para innovar, colaborar y superar obstáculos en pos del conocimiento. Cada misión no solo aporta datos científicos, sino que también impulsa avances en tecnología, ingeniería y ciencia de materiales.
+    </p>
+    <p>
+      El futuro de la exploración espacial promete nuevas fronteras, con misiones tripuladas a Marte, colonización de lunas y la posible existencia de vida en otros mundos. La inversión en investigación y la cooperación global serán fundamentales para mantener el impulso y alcanzar estos sueños.
+    </p>
+  </section>
+
+  <section id="agujeros" tabindex="0" aria-label="Agujeros Negros">
+    <h2>Agujeros Negros: Los Monstruos del Espacio</h2>
+    <p>
+      Los agujeros negros son regiones del espacio donde la gravedad es tan intensa que nada puede escapar, ni siquiera la luz. Se forman cuando estrellas muy masivas colapsan al final de su vida, comprimidas en un punto llamado singularidad.
+    </p>
+    <p>
+      Existen varios tipos: los agujeros negros estelares, supermasivos ubicados en el centro de las galaxias, y los hipotéticos agujeros negros primordiales formados en el inicio del universo.
+    </p>
+    <p>
+      A pesar de su nombre y misterio, no "chupan" todo a su alrededor indiscriminadamente. Los objetos solo son atraídos si están muy cerca, pero a distancia mantienen órbitas estables.
+    </p>
+    <p>
+      Los estudios de ondas gravitacionales y observaciones directas como la imagen de la sombra del agujero negro M87 están revolucionando nuestra comprensión de estos fenómenos.
+    </p>
+    <!-- Duplicado -->
+    <p>
+      La investigación sobre los agujeros negros también ha llevado a descubrimientos en física fundamental, como la naturaleza de la gravedad y las propiedades del espacio-tiempo. La observación de radiación Hawking y las simulaciones numéricas son ejemplos de cómo estos objetos desafían nuestra comprensión del universo.
+    </p>
+    <p>
+      La existencia de agujeros negros supermasivos en el centro de galaxias sugiere que estos objetos juegan un papel clave en la formación y evolución de las estructuras cósmicas. La ciencia continúa explorando estos enigmas, revelando que los agujeros negros no solo son monstruos, sino también piezas fundamentales del cosmos.
+    </p>
+  </section>
+
+  <section id="planetasEnanos" tabindex="0" aria-label="Planetas Enanos">
+    <h2>Planetas Enanos: El Universo Más Allá de los Planetas Tradicionales</h2>
+    <p>
+      Los planetas enanos son cuerpos que orbitan alrededor del Sol, pero que no cumplen con todos los criterios para ser considerados planetas, principalmente porque no han despejado su órbita. Plutón es el más famoso de ellos.
+    </p>
+    <p>
+      Otros planetas enanos incluyen Eris, Haumea y Makemake, ubicados en el cinturón de Kuiper, una región del sistema solar más allá de Neptuno llena de cuerpos helados.
+    </p>
+    <p>
+      Estos objetos son claves para entender la formación y evolución del sistema solar, ya que son vestigios primitivos que han permanecido casi intactos.
+    </p>
+    <p>
+      La exploración de planetas enanos está en marcha, con misiones como New Horizons que nos han mostrado imágenes detalladas y sorprendentes.
+    </p>
+    <!-- Duplicado -->
+    <p>
+      La existencia y estudio de estos cuerpos también aportan información sobre la distribución de materia en el sistema solar, ayudando a esclarecer cómo se formaron los planetas y otros objetos en el pasado distante.
+    </p>
+    <p>
+      La investigación continúa revelando que los planetas enanos no solo son restos del pasado, sino que también podrían tener condiciones que permitan la existencia de agua líquida o incluso vida en ambientes subterráneos, haciendo su estudio aún más interesante.
+    </p>
+  </section>
+
+</main>
+
+<script>
+  // Navegación entre secciones
+  const buttons = document.querySelectorAll('nav button');
+  const sections = document.querySelectorAll('main section');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const target = btn.getAttribute('data-target');
+      sections.forEach(sec => {
+        sec.classList.toggle('active', sec.id === target);
+      });
+      // Focus para accesibilidad
+      document.getElementById(target).focus();
+    });
+  });
+
+  // Mejor accesibilidad para timeline entries (toggle aria-expanded)
+  const timelineEntries = document.querySelectorAll('#timeline .timeline-entry');
+  timelineEntries.forEach(entry => {
+    entry.addEventListener('click', () => {
+      const expanded = entry.getAttribute('aria-expanded') === 'true';
+      entry.setAttribute('aria-expanded', !expanded);
+    });
+    entry.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        entry.click();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
